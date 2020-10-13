@@ -272,7 +272,7 @@ class PhisingClassifier:
       url = urlpising
         
       #Loading the data
-      data0 = pd.read_csv(r'apps\ml\phising_classifier\5.urldata.csv')
+      data0 = pd.read_csv(r'oke/apps/ml/phising_classifier/5.urldata.csv')
       data0.head()
 
       data0.describe()
