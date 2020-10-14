@@ -93,8 +93,8 @@ class PredictView(views.APIView):
        
         alg_index = 0
         algorithm_object = PhisingClassifier()
-        body_unicode = request.body.decode('utf-8')
-        body = json.loads(body_unicode)
+        
+        body = json.loads(request.body)
         content = body['url']
         prediction = algorithm_object.prediksi(content)
         
