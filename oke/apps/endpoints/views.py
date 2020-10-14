@@ -97,7 +97,7 @@ class PredictView(views.APIView):
         
         input_data=json.dumps(request.data)
         # JSON to pandas DataFrame
-        input_data = pd.DataFrame(input_data, index=[0])
+        input_data = pd.DataFrame(eval(input_data), index=[0])
         for column in [
             "url"
            
