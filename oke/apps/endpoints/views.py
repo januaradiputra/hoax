@@ -93,7 +93,7 @@ class PredictView(views.APIView):
        
         alg_index = 0
         algorithm_object = PhisingClassifier()
-        prediction = algorithm_object.prediksi(str(request.body))
+        prediction = algorithm_object.prediksi(str(request.body['ur']))
         
         
         return Response(prediction)
