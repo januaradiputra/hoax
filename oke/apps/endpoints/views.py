@@ -93,7 +93,7 @@ class PredictView(views.APIView):
        
         alg_index = 0
         algorithm_object = PhisingClassifier()
-        input_data=json.dumps(request.data)
+        input_data=json.loads(request.data)
         prediction = algorithm_object.prediksi(input_data['url'])
         
         
