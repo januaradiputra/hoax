@@ -18,6 +18,7 @@ from apps.endpoints.models import MLRequest
 from apps.endpoints.serializers import MLRequestSerializer
 from apps.ml.phising_classifier.svm_phising import PhisingClassifier
 import json
+import pandas as pd
 from numpy.random import rand
 from rest_framework import views, status
 from rest_framework.response import Response
@@ -94,10 +95,17 @@ class PredictView(views.APIView):
         alg_index = 0
         algorithm_object = PhisingClassifier()
         
-        s1 = json.dumps(list(request.body))
-        body = json.loads(s1)
-        content = body['url']
-        prediction = algorithm_object.prediksi(content)
+        input_data=json.dumps(request.data)
+        # JSON to pandas DataFrame
+        input_data = pd.DataFrame(input_data, index=[0])
+        for column in [
+            "url"
+           
+        ]:
+            categorical_convert = self.encoders[column]
+            input_data[column] = categorical_convert.transform(input_data[column])
+
         
-        
+        prediction = algorithm_object.prediksi(input_data["url"])
+             
         return Response(prediction)
