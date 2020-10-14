@@ -98,14 +98,7 @@ class PredictView(views.APIView):
         input_data=json.dumps(request.data)
         # JSON to pandas DataFrame
         input_data = pd.DataFrame(eval(input_data), index=[0])
-        for column in [
-            "url"
-           
-        ]:
-            categorical_convert = self.encoders[column]
-            input_data[column] = categorical_convert.transform(input_data[column])
-
-        
+                
         prediction = algorithm_object.prediksi(input_data["url"])
              
         return Response(prediction)
