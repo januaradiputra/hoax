@@ -113,4 +113,4 @@ class PhisingClassifier:
         pred = text_clf.predict(sms_baru)
         #print("Hasil prediksi {}".format(pred))
         
-      return pred
+        return pred
