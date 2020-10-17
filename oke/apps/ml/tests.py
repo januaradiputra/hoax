@@ -23,7 +23,7 @@ class MLTests(TestCase):
         self.assertEqual(len(registry.endpoints), 1)
         
     def test_rf_algorithm(self):
-        input_data = "https://www.trademzpro.com/admin/"
+        input_data = "https://wartakota.tribunnews.com/2020/09/29/perpres-disiapkan-guru-dan-dosen-bakal-masuk-kelompok-pertama-yang-disuntik-vaksin-covid-19"
         my_alg = PhisingClassifier()
         response = my_alg.prediksi(input_data)
         print(response)
