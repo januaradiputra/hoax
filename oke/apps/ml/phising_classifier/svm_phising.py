@@ -88,7 +88,7 @@ class PhisingClassifier:
         hstopword = self.stopword(hwhitespace)
         hasilStemming = self.stemming(hstopword)
                           
-        namaFile = "hasilPreprocess2.csv"
+        namaFile = "oke/apps/ml/phising_classifier/hasilPreprocess2.csv"
         data = []
         label = []
         with open(namaFile, 'r', encoding='utf-8') as csvfile:
