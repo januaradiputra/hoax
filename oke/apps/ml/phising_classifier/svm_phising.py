@@ -64,7 +64,7 @@ class PhisingClassifier:
    
   
         with open('hasilPreprocess2.csv', 'w') as f:
-        writer = csv.writer(f,delimiter=',',lineterminator='\n')
+            writer = csv.writer(f,delimiter=',',lineterminator='\n')
         for line in hasil:
             writer.writerow(line)
             
