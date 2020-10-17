@@ -35,4 +35,4 @@ whitenoise==5.2.0
 whois==0.9.7
 sastrawi==1.0.1
 nltk==3.5
-newspaper==0.1.0.7 
+newspaper3k==0.2.8
